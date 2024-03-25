@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.9'
 
 services:
   api:
@@ -8,5 +8,28 @@ services:
     ports:
       - "3000:3000"
     tty: true
-    volumes: 
+    environment:
+      DATABASE_URL: postgresql://fitly:fitly@databse:5432/fitly?schema=public
+    volumes:
       - .:/app/src
+    networks:
+      - fitly_network
+
+  database:
+    image: postgres:16.2
+    container_name: fitly.db
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_DB: fitly
+      POSTGRES_USER: fitly
+      POSTGRES_PASSWORD: fitly
+    volumes:
+      - ./.data:/var/lib/postgresql/data
+    networks:
+      - fitly_network
+
+networks:
+  fitly_network:
+    driver: bridge

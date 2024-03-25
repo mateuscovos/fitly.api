@@ -52,3 +52,10 @@ $ yarn run test:cov
 # unit tests
 $ yarn commit
 ```
+
+## Migrations
+
+```bash
+# create new migration
+$ npx prisma migrate dev --name <name>
+```
