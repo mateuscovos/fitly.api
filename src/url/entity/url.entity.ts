@@ -6,11 +6,11 @@ export class UrlEntity extends BaseEntity {
     @IsString()
     @Length(6, 6)
     @IsNotEmpty()
-    hash: String
+    hash: string
 
     @IsUrl()
     @IsNotEmpty()
-    redirectTo: String
+    redirectTo: string
 
     @IsOptional()
     @IsDate()

@@ -9,7 +9,7 @@ services:
       - "3000:3000"
     tty: true
     environment:
-      DATABASE_URL: postgresql://fitly:fitly@databse:5432/fitly?schema=public
+      DATABASE_URL: postgresql://fitly:fitly@database:5432/fitly?schema=public
     volumes:
       - .:/app/src
     networks:

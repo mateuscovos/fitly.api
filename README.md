@@ -57,5 +57,5 @@ $ yarn commit
 
 ```bash
 # create new migration
-$ npx prisma migrate dev --name <name>
+$ npx prisma migrate dev
 ```
