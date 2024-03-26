@@ -1,5 +1,6 @@
 import { IsDate, IsNotEmpty, IsOptional, IsString, IsUrl, Length, ValidationError, validateOrReject } from "class-validator"
 import { BaseEntity } from "../../common/entity/base.entity"
+import { generateHash } from "../../common/encrypt"
 
 export class UrlEntity extends BaseEntity {
     @IsString()
@@ -18,7 +19,7 @@ export class UrlEntity extends BaseEntity {
     static new(redirectTo: string): UrlEntity {        
         const url = new UrlEntity()
 
-        url.hash = 'xYgs21'
+        url.hash = generateHash()
         url.createdAt = new Date()
         url.redirectTo = redirectTo
 
