@@ -7,6 +7,13 @@ Make sure you have the following installed:
 - Docker
 - Node.js 21.x
 
+### Features to Implement:
+- [ ] Password encrypt
+- [ ] Terraform files
+- [ ] Observability with opentelemetry
+- [ ] Global error handling
+- [ ] Finish url and user crud
+
 ## Requests
 You can find some examples of requests in the @postman folder, which contains the requests.
 
