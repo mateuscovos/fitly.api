@@ -10,6 +10,8 @@ services:
     tty: true
     environment:
       DATABASE_URL: postgresql://fitly:fitly@database:5432/fitly?schema=public
+      JWT_SECRET: 1768fa3e-d9e6-48fb-a971-3f063fe0fc99
+      JWT_EXPIRES: 160s
     volumes:
       - .:/app/src
     networks:

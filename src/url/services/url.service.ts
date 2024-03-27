@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { UrlEntity } from '../entity/url.entity';
 import { toEntity, toModel } from '../mapper/url.mapper';
-import { PrismaService } from './prisma.service';
+import { PrismaService } from '../../prisma/services/prisma.service';
 import { NotFoundError } from 'rxjs';
 
 @Injectable()

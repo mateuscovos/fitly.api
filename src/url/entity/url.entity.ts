@@ -25,6 +25,7 @@ export class UrlEntity extends BaseEntity {
         url.hash = generateHash()
         url.createdAt = new Date()
         url.redirectTo = redirectTo
+        url.accessCounter = 0
 
         return url
     }

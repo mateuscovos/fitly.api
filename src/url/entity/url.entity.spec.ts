@@ -56,6 +56,17 @@ describe('UrlEntity', () => {
         expect(url.updatedAt.getTime()).toBeGreaterThanOrEqual(currentDate2.getTime())
     });
 
+    it('Success: Should successfully increase access counter.', async () => {
+        const currentDate = new Date()
+        const url = UrlEntity.new('https://foo.com')
+        expect(url.accessCounter).toBe(0)
+
+        url.increaseCounter()
+        url.increaseCounter()
+
+        expect(url.accessCounter).toBe(2)
+    });
+
     it('Error: Should not allow changing a disabled URL.', async () => {
         const url = UrlEntity.new('https://foo.com')
 
