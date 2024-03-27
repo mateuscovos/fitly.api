@@ -31,4 +31,5 @@ model Urls {
   disabled_at DateTime?
   user_id     String?
   user        Users?    @relation(fields: [user_id], references: [id])
+  access_counter Int @default(0)
 }

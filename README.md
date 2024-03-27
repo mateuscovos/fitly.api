@@ -11,6 +11,10 @@ Make sure you have the following installed:
 
 ```bash
 $ yarn install
+
+$ docker compose up -d
+
+$ npx prisma migrate dev
 ```
 
 ## Running the app locally

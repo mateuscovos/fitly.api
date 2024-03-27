@@ -27,6 +27,9 @@ export class UrlService {
 
         const urlEntity = toEntity(url)
 
+        urlEntity.increaseCounter()
+        await this.prisma.urls.update({ data: toModel(urlEntity), where: { hash: urlEntity.hash } })
+
         return [urlEntity.redirectTo, null]
     }
 }

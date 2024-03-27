@@ -1,4 +1,4 @@
-import { IsDate, IsNotEmpty, IsOptional, IsString, IsUrl, Length, ValidationError, validateOrReject } from "class-validator"
+import { IsDate, IsInt, IsNotEmpty, IsOptional, IsString, IsUrl, Length, ValidationError, validateOrReject } from "class-validator"
 import { BaseEntity } from "../../common/entity/base.entity"
 import { generateHash } from "../../common/encrypt"
 
@@ -15,6 +15,9 @@ export class UrlEntity extends BaseEntity {
     @IsOptional()
     @IsDate()
     disabledAt?: Date
+
+    @IsInt()
+    accessCounter: number
 
     static new(redirectTo: string): UrlEntity {        
         const url = new UrlEntity()
@@ -59,5 +62,10 @@ export class UrlEntity extends BaseEntity {
         this.disabledAt = new Date()
         this.updatedAt = new Date()
         return [true, null]
+    }
+
+    increaseCounter() {
+        this.accessCounter++
+        this.updatedAt = new Date()
     }
 }
