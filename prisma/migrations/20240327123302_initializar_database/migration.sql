@@ -18,6 +18,7 @@ CREATE TABLE "Urls" (
     "updated_at" TIMESTAMP(3),
     "disabled_at" TIMESTAMP(3),
     "user_id" TEXT,
+    "access_counter" INTEGER NOT NULL DEFAULT 0,
 
     CONSTRAINT "Urls_pkey" PRIMARY KEY ("hash")
 );

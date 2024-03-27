@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "88eace07-7f1a-46fa-b587-e3ab97f0608d",
+		"name": "fitly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "5588585"
+	},
+	"item": [
+		{
+			"name": "url",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZWI1ODgxNy05OWVlLTRkMTktODZhZC0xMzQ0OWM5Nzg1MjQiLCJ1c2VybmFtZSI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTcxMTU0NDkwMSwiZXhwIjoxNzExNTQ1MDYxfQ.IN5yazt_he9JoAXddPNcaE0qSYMx3eDcRFhR23-EUq4"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"www.teste.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/url"
+					},
+					"response": []
+				},
+				{
+					"name": "redirect",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"www.google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/3SI3Ei"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZWI1ODgxNy05OWVlLTRkMTktODZhZC0xMzQ0OWM5Nzg1MjQiLCJ1c2VybmFtZSI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTcxMTU0NDkwMSwiZXhwIjoxNzExNTQ1MDYxfQ.IN5yazt_he9JoAXddPNcaE0qSYMx3eDcRFhR23-EUq4"
+							}
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZWI1ODgxNy05OWVlLTRkMTktODZhZC0xMzQ0OWM5Nzg1MjQiLCJ1c2VybmFtZSI6InRlc3RlQHRlc3RlLmNvbSIsImlhdCI6MTcxMTU0NDExMSwiZXhwIjoxNzExNTQ0MjcxfQ.ah3UlwLueJaFlPduYTiBwbLra02rSvnB2vLWb2DxVE8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"www.google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/url"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"teste@teste.com\",\r\n    \"password\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"teste@teste.com\",\r\n    \"name\": \"teste\",\r\n    \"password\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/users"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

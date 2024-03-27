@@ -7,6 +7,9 @@ Make sure you have the following installed:
 - Docker
 - Node.js 21.x
 
+## Requests
+You can find some examples of requests in the @postman folder, which contains the requests.
+
 ## Installation
 
 ```bash

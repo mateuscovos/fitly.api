@@ -1,5 +1,5 @@
-import { ValidationError } from "class-validator";
-import { UrlEntity } from "./url.entity";
+import { ValidationError } from "class-validator" 
+import { UrlEntity } from "./url.entity" 
 
 describe('UrlEntity', () => {
     it('Success: Should successfully create a new URL.', async () => {
@@ -12,7 +12,7 @@ describe('UrlEntity', () => {
         expect(url.disabledAt).toBeUndefined()
         expect(url.createdAt.getTime()).toBeGreaterThanOrEqual(currentDate.getTime())
         expect(url.updatedAt).toBeUndefined()
-    });
+    }) 
 
     it('Success: Should successfully update a URL.', async () => {
         const currentDate = new Date()
@@ -33,7 +33,7 @@ describe('UrlEntity', () => {
         expect(url.disabledAt).toBeUndefined()
         expect(url.createdAt.getTime()).toBeGreaterThanOrEqual(currentDate.getTime())
         expect(url.updatedAt.getTime()).toBeGreaterThanOrEqual(currentDate2.getTime())
-    });
+    }) 
 
     it('Success: Should successfully deactivate a URL.', async () => {
         const currentDate = new Date()
@@ -54,7 +54,7 @@ describe('UrlEntity', () => {
         expect(url.disabledAt.getTime()).toBeGreaterThanOrEqual(currentDate2.getTime())
         expect(url.createdAt.getTime()).toBeGreaterThanOrEqual(currentDate.getTime())
         expect(url.updatedAt.getTime()).toBeGreaterThanOrEqual(currentDate2.getTime())
-    });
+    }) 
 
     it('Success: Should successfully increase access counter.', async () => {
         const currentDate = new Date()
@@ -65,7 +65,7 @@ describe('UrlEntity', () => {
         url.increaseCounter()
 
         expect(url.accessCounter).toBe(2)
-    });
+    }) 
 
     it('Error: Should not allow changing a disabled URL.', async () => {
         const url = UrlEntity.new('https://foo.com')
@@ -74,10 +74,10 @@ describe('UrlEntity', () => {
 
         const [success, error] = await url.changeUrl('https://bar.com')
 
-        expect(success).toBeFalsy();
-        expect(error).toBeInstanceOf(Array<ValidationError>);
-        expect(error[0].constraints.IsNotEmpty).toBe('A change to a previously disabled URL is not allowed.');
-    });
+        expect(success).toBeFalsy() 
+        expect(error).toBeInstanceOf(Array<ValidationError>) 
+        expect(error[0].constraints.IsNotEmpty).toBe('A change to a previously disabled URL is not allowed.') 
+    }) 
 
     it('Error: Should not allow deactivating a URL twice.', async () => {
         const url = UrlEntity.new('https://foo.com')
@@ -85,11 +85,11 @@ describe('UrlEntity', () => {
         const [successFirst, errorFirst] = await url.deactivate()
         const [successSecond, errorSecond] = await url.deactivate()
 
-        expect(successFirst).toBeTruthy();
+        expect(successFirst).toBeTruthy() 
         expect(errorFirst).toBeNull()
 
-        expect(successSecond).toBeFalsy();
-        expect(errorSecond).toBeInstanceOf(Array<ValidationError>);
-        expect(errorSecond[0].constraints.IsNotEmpty).toBe('The URL is already disabled.');
-    });
-});
+        expect(successSecond).toBeFalsy() 
+        expect(errorSecond).toBeInstanceOf(Array<ValidationError>) 
+        expect(errorSecond[0].constraints.IsNotEmpty).toBe('The URL is already disabled.') 
+    }) 
+}) 

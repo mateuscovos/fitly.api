@@ -19,13 +19,20 @@ export class UrlEntity extends BaseEntity {
     @IsInt()
     accessCounter: number
 
-    static new(redirectTo: string): UrlEntity {        
+    @IsOptional()
+    @IsString()
+    userId: string
+
+    static new(redirectTo: string, userId?: string): UrlEntity {        
         const url = new UrlEntity()
+
+        const redirect = !(redirectTo.includes("https") || redirectTo.includes("http")) ? `http://${redirectTo}` : redirectTo
 
         url.hash = generateHash()
         url.createdAt = new Date()
-        url.redirectTo = redirectTo
+        url.redirectTo = redirect
         url.accessCounter = 0
+        url.userId = userId
 
         return url
     }

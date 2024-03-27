@@ -1,5 +1,5 @@
-import { ValidationError } from "class-validator";
-import { generateHash } from ".";
+import { ValidationError } from "class-validator"
+import { generateHash } from "."
 
 describe('Ecnrypt', () => {
     describe('Hashing', () => {
@@ -7,6 +7,6 @@ describe('Ecnrypt', () => {
             for (let i = 0; i <= 50; i++) {
                 expect(generateHash().length).toBe(6)
             }
-        });
+        })
     })
-});
+}) 

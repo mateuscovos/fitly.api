@@ -1,9 +1,9 @@
-import { IsDate } from "class-validator";
+import { IsDate } from "class-validator" 
 
 export class BaseEntity {
     @IsDate()
-    createdAt: Date;
+    createdAt: Date 
 
     @IsDate()
-    updatedAt: Date;
+    updatedAt: Date 
 }
